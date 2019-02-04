@@ -47,7 +47,7 @@ public class PokedexPanel extends JPanel
 	{
 		this.setLayout(appLayout);
 		this.setPreferredSize(new Dimension(1000, 500));
-		this.setBackground(Color.RED);
+		this.setBackground(Color.CYAN);
 		this.add(dragoniteLabel);
 		this.add(articunoLabel);
 		this.add(arcanineLabel);
