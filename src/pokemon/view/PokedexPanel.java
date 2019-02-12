@@ -8,35 +8,52 @@ import java.awt.*;
 public class PokedexPanel extends JPanel
 {
 	private PokedexController app;
-	private JLabel dragoniteLabel;
-	private JLabel articunoLabel;
-	private JLabel arcanineLabel;
-	private JLabel honedgeLabel;
-	private JLabel lampentLabel;
-	private JTextField dragoniteText;
-	private JTextField articunoText;
-	private JTextField arcanineText;
-	private JTextField honedgeText;
-	private JTextField lampentText;
+	
+	private JLabel numberLabel;
+	private JLabel nameLabel;
+	private JLabel evolveLabel;
+	private JLabel attackLabel;
+	private JLabel enhanceLabel;
+	private JLabel healthLabel;
+	private JLabel imageLabel;
+	
+	private JTextField numberField;
+	private JTextField nameField;
+	private JTextField evolveField;
+	private JTextField attackField;
+	private JTextField enhanceField;
+	private JTextField healthField;
+ 	
 	private SpringLayout appLayout;
+	
+	private JButton changeButton;
+	private JComboBox pokedexDropdown;
 	
 	public PokedexPanel(PokedexController app)
 	{
 		super();
 		
 		this.app = app;
+		appLayout = new SpringLayout();
 		
-		dragoniteLabel = new JLabel("Dragonite");
-		articunoLabel = new JLabel("Articuno");
-		arcanineLabel = new JLabel("Acanine");
-		honedgeLabel = new JLabel("Honedge");
-		lampentLabel = new JLabel("Lampent");
+		changeButton = new JButton("Change pokevalues");
 		
-		dragoniteText = new JTextField("Dra");
-		articunoText = new JTextField("Art");
-		arcanineText = new JTextField("Arc");
-		honedgeText = new JTextField("Hon");
-		lampentText = new JTextField("Lam");
+		pokedexDropdown = new JComboBox(); //stub
+		
+		numberLabel = new JLabel("Num");
+		nameLabel = new JLabel("Name");
+		evolveLabel = new JLabel("Evolve");
+		attackLabel = new JLabel("Attack");
+		enhanceLabel = new JLabel("Enhance");
+		healthLabel = new JLabel("Health");
+		imageLabel = new JLabel("Image");
+		
+		numberField = new JTextField("Num");
+		nameField = new JTextField("Name");
+		evolveField = new JTextField("Evolve");
+		attackField = new JTextField("Attack");
+		enhanceField = new JTextField("Enhance");
+		healthField = new JTextField("Health");
 		
 		setupPanel();
 		setupLayout();
@@ -48,16 +65,23 @@ public class PokedexPanel extends JPanel
 		this.setLayout(appLayout);
 		this.setPreferredSize(new Dimension(1000, 500));
 		this.setBackground(Color.CYAN);
-		this.add(dragoniteLabel);
-		this.add(articunoLabel);
-		this.add(arcanineLabel);
-		this.add(honedgeLabel);
-		this.add(lampentLabel);
-		this.add(dragoniteText);
-		this.add(articunoText);
-		this.add(arcanineText);
-		this.add(honedgeText);
-		this.add(lampentText);
+		
+		this.add(changeButton);
+		this.add(pokedexDropdown);
+		
+		this.add(numberLabel);
+		this.add(nameLabel);
+		this.add(evolveLabel);
+		this.add(attackLabel);
+		this.add(enhanceLabel);
+		this.add(healthLabel);
+		this.add(imageLabel);
+		this.add(numberField);
+		this.add(nameField);
+		this.add(evolveField);
+		this.add(attackField);
+		this.add(enhanceField);
+		this.add(healthField);
 	}
 	
 	private void setupLayout()
