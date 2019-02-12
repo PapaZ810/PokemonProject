@@ -27,7 +27,7 @@ public class PokedexPanel extends JPanel
 	private SpringLayout appLayout;
 	
 	private JButton changeButton;
-	private JComboBox pokedexDropdown;
+	private JComboBox<String> pokedexDropdown;
 	
 	public PokedexPanel(PokedexController app)
 	{
@@ -37,9 +37,9 @@ public class PokedexPanel extends JPanel
 		appLayout = new SpringLayout();
 		
 		changeButton = new JButton("Change pokevalues");
+		pokedexDropdown = new JComboBox<String>();
 		
-		pokedexDropdown = new JComboBox(); //stub
-		appLayout.putConstraint(SpringLayout.EAST, pokedexDropdown, -204, SpringLayout.EAST, this);
+		
 		numberLabel = new JLabel("Num");
 		nameLabel = new JLabel("Name");
 		evolveLabel = new JLabel("Evolve");
@@ -51,21 +51,28 @@ public class PokedexPanel extends JPanel
 		numberField = new JTextField("Num");
 		nameField = new JTextField("Name");
 		evolveField = new JTextField("Evolve");
-		appLayout.putConstraint(SpringLayout.NORTH, pokedexDropdown, 1, SpringLayout.NORTH, evolveField);
+		
 		attackField = new JTextField("Attack");
 		enhanceField = new JTextField("Enhance");
 		healthField = new JTextField("Health");
 		
+		setupDropdown();
 		setupPanel();
 		setupLayout();
 		setupListeners();
+	}
+	
+	private void setupDropdown()
+	{
+		DefaultComboBoxModel<String> temp = new DefaultComboBoxModel<String>(app.buildPokedexText());
+		pokedexDropdown.setModel(temp);
 	}
 	
 	private void setupPanel()
 	{
 		this.setLayout(appLayout);
 		this.setPreferredSize(new Dimension(1000, 500));
-		this.setBackground(Color.CYAN);
+		this.setBackground(new Color(0, 153, 153));
 		
 //		this.add(changeButton);
 		this.add(pokedexDropdown);
@@ -113,6 +120,8 @@ public class PokedexPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, enhanceField, 78, SpringLayout.EAST, healthLabel);
 		appLayout.putConstraint(SpringLayout.NORTH, healthField, 49, SpringLayout.SOUTH, enhanceField);
 		appLayout.putConstraint(SpringLayout.WEST, healthField, 81, SpringLayout.EAST, imageLabel);
+		appLayout.putConstraint(SpringLayout.EAST, pokedexDropdown, -204, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, pokedexDropdown, 1, SpringLayout.NORTH, evolveField);
 	}
 	
 	private void setupListeners()
