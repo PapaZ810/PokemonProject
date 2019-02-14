@@ -29,37 +29,39 @@ public class PokedexPanel extends JPanel
 	private JButton changeButton;
 	private JComboBox<String> pokedexDropdown;
 	
+	private ImageIcon pokemonIcon;
+	
 	public PokedexPanel(PokedexController app)
 	{
 		super();
 		
 		this.app = app;
-		appLayout = new SpringLayout();
+		this.appLayout = new SpringLayout();
+		this.pokemonIcon = new ImageIcon(getClass().getResource("/pokemon/view/images/arc/jpeg"));
 		
 		changeButton = new JButton("Change pokevalues");
 		pokedexDropdown = new JComboBox<String>();
 		
+		numberLabel = new JLabel("This pokemon number is");
+		nameLabel = new JLabel("This pokemon name is");
+		evolveLabel = new JLabel("This pokemon can evolve");
+		attackLabel = new JLabel("This pokemon attack level is");
+		enhanceLabel = new JLabel("This pokemon enhancement level is");
+		healthLabel = new JLabel("This pokemon health is");
+		imageLabel = new JLabel("0", pokemonIcon, JLabel.CENTER);
 		
-		numberLabel = new JLabel("Num");
-		nameLabel = new JLabel("Name");
-		evolveLabel = new JLabel("Evolve");
-		attackLabel = new JLabel("Attack");
-		enhanceLabel = new JLabel("Enhance");
-		healthLabel = new JLabel("Health");
-		imageLabel = new JLabel("Image");
-		
-		numberField = new JTextField("Num");
-		nameField = new JTextField("Name");
-		evolveField = new JTextField("Evolve");
-		
-		attackField = new JTextField("Attack");
-		enhanceField = new JTextField("Enhance");
-		healthField = new JTextField("Health");
+		numberField = new JTextField("0");
+		nameField = new JTextField("My pokename");
+		evolveField = new JTextField("false");
+		attackField = new JTextField("0");
+		enhanceField = new JTextField("0");
+		healthField = new JTextField("0");
 		
 		setupDropdown();
 		setupPanel();
 		setupLayout();
 		setupListeners();
+		sendDataToController();
 	}
 	
 	private void setupDropdown()
@@ -71,10 +73,10 @@ public class PokedexPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(appLayout);
-		this.setPreferredSize(new Dimension(1000, 500));
+		this.setPreferredSize(new Dimension(800, 600));
 		this.setBackground(new Color(0, 153, 153));
 		
-//		this.add(changeButton);
+		this.add(changeButton);
 		this.add(pokedexDropdown);
 		
 		this.add(numberLabel);
@@ -90,6 +92,22 @@ public class PokedexPanel extends JPanel
 		this.add(attackField);
 		this.add(enhanceField);
 		this.add(healthField);
+		
+		imageLabel.setVerticalTextPosition(JLabel.BOTTOM);
+		imageLabel.setHorizontalTextPosition(JLabel.CENTER);
+	}
+	
+	private void sendDataToController()
+	{
+		int index = pokedexDropdown.getSelectedIndex();
+		
+		if(app.isInt(attackField.getText()) && app.isDouble(enhanceField.getText()) && app.isInt(healthField.getText())) 
+		{
+			String [] data = new String[5];
+			
+			
+			app.updatePokemon(index,  data);
+		}
 	}
 	
 	private void setupLayout()

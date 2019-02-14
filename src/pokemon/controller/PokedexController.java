@@ -17,11 +17,11 @@ public class PokedexController
 	
 	public PokedexController()
 	{
-		arc = new Arcanine(100, "Arcanine");
-		art = new Articuno(100, "Articuno");
-		dra = new Dragonite(100, "Dragonite");
-		lam = new Lampent(100, "Lampent");
-		hon = new Honedge(100, "Hoonedge");
+		arc = new Arcanine(59, "Arcanine");
+		art = new Articuno(144, "Articuno");
+		dra = new Dragonite(149, "Dragonite");
+		lam = new Lampent(679, "Lampent");
+		hon = new Honedge(608, "Hoonedge");
 		appFrame = new PokedexFrame(this);
 		pokemonList = new ArrayList<Pokemon>();
 	}
