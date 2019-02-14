@@ -26,6 +26,15 @@ public class PokedexController
 		pokemonList = new ArrayList<Pokemon>();
 	}
 	
+	public void buildList()
+	{
+		pokemonList.add(new Arcanine());
+		pokemonList.add(new Articuno());
+		pokemonList.add(new Dragonite());
+		pokemonList.add(new Lampent());
+		pokemonList.add(new Honedge());
+	}
+	
 	public void updatePokemon(int index, String [] data)
 	{
 		if(data.length == 5)
@@ -52,7 +61,7 @@ public class PokedexController
 	
 	public void start()
 	{
-		
+		buildList();
 	}
 	
 	public ArrayList<Pokemon> getPokemonList() 
