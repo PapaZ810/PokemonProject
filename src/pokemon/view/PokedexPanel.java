@@ -62,6 +62,7 @@ public class PokedexPanel extends JPanel
 		setupLayout();
 		setupListeners();
 		sendDataToController();
+		changeImageDisplay("name");
 	}
 	
 	private void setupDropdown()
@@ -105,9 +106,28 @@ public class PokedexPanel extends JPanel
 		{
 			String [] data = new String[5];
 			
+			//code
 			
-			app.updatePokemon(index,  data);
+			app.updatePokemon(index, data);
 		}
+	}
+	
+	private void changeImageDisplay(String name)
+	{
+		String path = "/pokemon/view/images/";
+		String defaultName = "arc";
+		String extension = ".jpeg";
+		
+		try 
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + name.toLowerCase() + extension));
+		}
+		catch (NullPointerException missingFile)
+		{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + defaultName + extension));
+		}
+		imageLabel.setIcon(pokemonIcon);
+		repaint();
 	}
 	
 	private void setupLayout()
@@ -144,7 +164,22 @@ public class PokedexPanel extends JPanel
 	
 	private void setupListeners()
 	{
+		changeButton.addActionListener(new ActionListener()
+			{
+				public void actionPerformed(ActionEvent click)
+				{
+					sendDataToController();
+				}
+			});
 		
+		pokedexDropdown.addActionListener(new ActionListener()
+			{
+				public void actionPerformed(ActionEvent selection)
+				{
+					String name = pokedexDropdown.getSelectedItem().toString();
+					changeImageDisplay(name);
+				}
+			});
 	}
 	
 }
