@@ -50,6 +50,8 @@ public class PokedexController
 	
 	public String[] buildPokedexText()
 	{
+		buildList();
+		
 		String [] names = new String [pokemonList.size()];
 		
 		for(int index = 0; index < pokemonList.size(); index++)
@@ -61,7 +63,7 @@ public class PokedexController
 	
 	public void start()
 	{
-		buildList();
+		
 	}
 	
 	public ArrayList<Pokemon> getPokemonList() 
