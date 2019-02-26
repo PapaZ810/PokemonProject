@@ -1,6 +1,6 @@
 package pokemon.model;
 
-public class Articuno extends Pokemon
+public class Articuno extends Pokemon implements Ice
 {
 	public Articuno()
 	{
@@ -15,5 +15,15 @@ public class Articuno extends Pokemon
 	public Articuno(int number, String name)
 	{
 		super(number, name);
+	}
+	
+	public void waterBlast()
+	{
+		
+	}
+	
+	public void bigWave()
+	{
+		
 	}
 }

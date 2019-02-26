@@ -8,20 +8,10 @@ import pokemon.model.*;
 public class PokedexController
 {
 	private PokedexFrame appFrame;
-	private Arcanine arc;
-	private Articuno art;
-	private Dragonite dra;
-	private Lampent lam;
-	private Honedge hon;
 	private ArrayList<Pokemon> pokemonList;
 	
 	public PokedexController()
 	{
-		arc = new Arcanine(59, "Arcanine");
-		art = new Articuno(144, "Articuno");
-		dra = new Dragonite(149, "Dragonite");
-		lam = new Lampent(679, "Lampent");
-		hon = new Honedge(608, "Hoonedge");
 		appFrame = new PokedexFrame(this);
 		pokemonList = new ArrayList<Pokemon>();
 	}

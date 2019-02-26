@@ -1,6 +1,6 @@
 package pokemon.model;
 
-public class Lampent extends Pokemon
+public class Lampent extends Pokemon implements Fire
 {
 	public Lampent()
 	{
@@ -15,5 +15,15 @@ public class Lampent extends Pokemon
 	public Lampent(int number, String name)
 	{
 		super(number, name);
+	}
+	
+	public void firePunch()
+	{
+		
+	}
+	
+	public void fireBall()
+	{
+		
 	}
 }

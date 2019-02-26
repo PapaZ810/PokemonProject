@@ -16,4 +16,14 @@ public class Honedge extends Pokemon
 	{
 		super(number, name);
 	}
+	
+	public int magnetBomb()
+	{
+		return 123;
+	}
+	
+	public int bulletPunch()
+	{
+		return 12345;
+	}
 }

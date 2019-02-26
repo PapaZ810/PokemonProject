@@ -1,6 +1,6 @@
 package pokemon.model;
 
-public class Dragonite extends Pokemon
+public class Dragonite extends Pokemon implements Dragon
 {
 	public Dragonite()
 	{
@@ -17,4 +17,13 @@ public class Dragonite extends Pokemon
 		super(number, name);
 	}
 	
+	public int dragonClaw()
+	{
+		return 123456789;
+	}
+	
+	public void fly()
+	{
+		
+	}
 }
