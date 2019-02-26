@@ -1,6 +1,6 @@
 package pokemon.model;
 
-public class Honedge extends Pokemon
+public class Honedge extends Pokemon implements Steel, Ghost
 {
 	public Honedge()
 	{
@@ -25,5 +25,15 @@ public class Honedge extends Pokemon
 	public int bulletPunch()
 	{
 		return 12345;
+	}
+	
+	public int Hex()
+	{
+		return 9999;
+	}
+	
+	public void shadowBall()
+	{
+		
 	}
 }

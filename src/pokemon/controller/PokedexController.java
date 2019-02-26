@@ -51,6 +51,11 @@ public class PokedexController
 		return names;
 	}
 	
+	public void savePokedex()
+	{
+		
+	}
+	
 	public void start()
 	{
 		
