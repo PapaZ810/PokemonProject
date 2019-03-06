@@ -78,6 +78,7 @@ public class PokedexPanel extends JPanel
 		this.setBackground(new Color(0, 153, 153));
 		
 		this.add(changeButton);
+		this.add(saveButton);
 		this.add(pokedexDropdown);
 		
 		this.add(numberLabel);
@@ -144,6 +145,10 @@ public class PokedexPanel extends JPanel
 	
 	private void setupLayout()
 	{
+		appLayout.putConstraint(SpringLayout.WEST, saveButton, 132, SpringLayout.EAST, changeButton);
+		appLayout.putConstraint(SpringLayout.SOUTH, saveButton, -59, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, changeButton, 0, SpringLayout.NORTH, saveButton);
+		appLayout.putConstraint(SpringLayout.WEST, changeButton, 99, SpringLayout.EAST, pokedexDropdown);
 		appLayout.putConstraint(SpringLayout.SOUTH, attackField, -50, SpringLayout.NORTH, enhanceField);
 		appLayout.putConstraint(SpringLayout.NORTH, enhanceField, -5, SpringLayout.NORTH, enhanceLabel);
 		appLayout.putConstraint(SpringLayout.WEST, enhanceField, 0, SpringLayout.WEST, numberField);
@@ -170,8 +175,6 @@ public class PokedexPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, nameField, 0, SpringLayout.WEST, numberField);
 		appLayout.putConstraint(SpringLayout.WEST, imageLabel, 30, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.EAST, imageLabel, -82, SpringLayout.WEST, numberLabel);
-		appLayout.putConstraint(SpringLayout.SOUTH, changeButton, -59, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.WEST, changeButton, 151, SpringLayout.EAST, pokedexDropdown);
 		appLayout.putConstraint(SpringLayout.WEST, pokedexDropdown, 30, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, pokedexDropdown, -61, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.NORTH, numberLabel, 47, SpringLayout.NORTH, this);
