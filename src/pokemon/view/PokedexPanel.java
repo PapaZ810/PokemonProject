@@ -128,8 +128,8 @@ public class PokedexPanel extends JPanel
 	private void changeImageDisplay(String name)
 	{
 		String path = "/pokemon/view/images/";
-		String defaultName = "arcanine";
-		String extension = ".jpeg";
+		String defaultName = "pokeball";
+		String extension = ".png";
 		
 		try 
 		{
