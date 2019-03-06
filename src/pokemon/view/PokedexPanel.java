@@ -38,7 +38,7 @@ public class PokedexPanel extends JPanel
 		
 		this.app = app;
 		this.appLayout = new SpringLayout();
-		this.pokemonIcon = new ImageIcon(getClass().getResource("/pokemon/view/images/arcanine.jpeg"));
+		this.pokemonIcon = new ImageIcon(getClass().getResource("/pokemon/view/images/pokeball.png"));
 		
 		changeButton = new JButton("Change pokevalues");
 		saveButton = new JButton("Save");
@@ -107,7 +107,11 @@ public class PokedexPanel extends JPanel
 		{
 			String [] data = new String[5];
 			
-			//code
+			data[0] = attackField.getText();
+			data[1] = enhanceField.getText();
+			data[2] = healthField.getText();
+			data[3] = nameField.getText();
+			data[4] = evolveField.getText();
 			
 			app.updatePokemon(index, data);
 		}
@@ -115,7 +119,7 @@ public class PokedexPanel extends JPanel
 	
 	private void updateFields(int index)
 	{
-		String [] data = app .getPokeData(index);
+		String [] data = app.getPokeData(index);
 		
 		attackField.setText(data[0]);
 		enhanceField.setText(data[1]);
@@ -128,8 +132,8 @@ public class PokedexPanel extends JPanel
 	private void changeImageDisplay(String name)
 	{
 		String path = "/pokemon/view/images/";
-		String defaultName = "pokeball";
-		String extension = ".png";
+		String defaultName = "arcanine";
+		String extension = ".jpeg";
 		
 		try 
 		{
