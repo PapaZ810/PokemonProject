@@ -75,7 +75,7 @@ public class PokedexPanel extends JPanel
 	{
 		this.setLayout(appLayout);
 		this.setPreferredSize(new Dimension(800, 600));
-		this.setBackground(new Color(0, 153, 153));
+		this.setBackground(Color.RED);
 		
 		this.add(changeButton);
 		this.add(saveButton);
